@@ -1,8 +1,6 @@
 def sum_with_while(min,max)
   count = min
-  #count is 3
   sum = min
-  #sum is 3
   while count < max
     count += 1
     sum += count
@@ -21,7 +19,7 @@ end
 
 
 def sum_recursive(min,max)
-
+  return sum(sum_with_for)
   #TODO (optional): return the sum of the integers between min and max
   #CONSTRAINT: you should use a recursive algorithm, i.e. the method should call itself
 end
