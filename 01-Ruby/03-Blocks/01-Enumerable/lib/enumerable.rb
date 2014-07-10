@@ -28,21 +28,31 @@ end
 
 
 def first_under(array, limit)
-  # TODO: Return the first number from an array that is less than limit.
-  #       You should use Enumerable#find
+  array.find do |num|
+    num < limit
+  end
 end
 
 def add_bang(array)
-  # TODO: Take an array of strings and return a new array with "!" appended to each string.
-  #       You should use Enumerable#map
+  array.map do |string|
+    "#{string}!"
+  end
 end
 
 def product(array)
+  array.reduce(:*)
+end
   # TODO: Calculate the product of an array of numbers.
   #       You should use of Enumerable#reduce
-end
+
 
 def sorted_pairs(array)
+  new_pairs = []
+  array.each_slice(2) do |pairs|
+    p pairs
+    new_pairs << pairs.sort
+  end
+  return new_pairs
   # TODO: Reorganize an array into slices of 2 elements, and sort each slice alphabetically.
   #       You should make use of Enumerable#each_slice
 end
