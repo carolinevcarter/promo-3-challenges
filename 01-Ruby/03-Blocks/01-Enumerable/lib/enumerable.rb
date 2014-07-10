@@ -24,7 +24,6 @@ def even_numbers(array)
 end
 
 def short_words(array, max_length)
-  max_length
   array.reject do |word|
    word.length > max_length
  end
