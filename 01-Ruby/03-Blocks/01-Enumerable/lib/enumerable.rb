@@ -3,42 +3,29 @@ def sum_odd_indexed(array)
   sum = 0
 
   array.each_with_index do |x, index|
-  if index.odd?
-    sum = sum + x
-  else
-    sum
+    if index.odd?
+      sum = sum + x
+    else
+      sum
+    end
   end
-end
-    sum
+  sum
 end
  # TODO: computes the sum of elements at odd indices (1, 3, 5, 7, etc.)
  # You should make use Enumerable#each_with_index
 
 def even_numbers(array)
-
   array.select do |num|
     num.even?
-    end
-  # TODO: Return the even numbers from a list of integers.
-  #       You should use Enumerable#select
+  end
 end
 
 def short_words(array, max_length)
   array.reject do |word|
-   word.length > max_length
- end
+    word.length > max_length
+  end
 end
 
-
-
-    end
-
-
-end
-
-  # TODO: Take and array of words, return the array of words not exceeding max_length characters
-  #       You should use Enumerable#reject
-end
 
 def first_under(array, limit)
   # TODO: Return the first number from an array that is less than limit.
