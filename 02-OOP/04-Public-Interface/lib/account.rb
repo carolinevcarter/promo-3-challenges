@@ -4,6 +4,8 @@ end
 
 class BankAccount
 
+  attr_reader :name, :position, :iban
+
   # Contract for the BankAccount class
   # - you can access full owner's name and position, but partial IBAN
   # - you cannot access full IBAN
@@ -25,8 +27,15 @@ class BankAccount
   end
 
   def withdraw(amount)
+
+    #you can withdraw or deposit money
     # TODO: Call add_transaction with the right argument
     # TODO: returns a string with a message
+
+    #Implement BankAccount#withdraw and BankAccount#deposit.
+    #Both these methods should call the private
+    #BankAccount#add_transaction method (which is also called in the BankAccount#initialize).
+    #These methods should return a message like "You've just withdrawn/deposit XXX euros".
   end
 
   def deposit(amount)
@@ -40,10 +49,12 @@ class BankAccount
   end
 
   def iban
-    # TODO: Hide the middle of the IBAN like FR14**************606 and return it
+  return iban[0,4] + "*" * 14 + iban[-3..-1]
   end
+  # TODO: Hide the middle of the IBAN like FR14**************606 and return it
 
   def to_s
+
     # Method used when printing account object as string (also used for string interpolation)
     # TODO: Displays the account owner, the hidden iban and the position of the account
   end
@@ -51,6 +62,8 @@ class BankAccount
   private
 
   def add_transaction(amount)
+    @transactions << amount
+    @position += amount
     # TODO: add the amount in the transactions array
     # TODO: update the current position (which represents the balance of the account)
   end
