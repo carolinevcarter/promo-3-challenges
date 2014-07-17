@@ -1,4 +1,4 @@
-class Cars
+class Car
   def initialize(color, brand, power)
     @color = color
     @brand = brand
