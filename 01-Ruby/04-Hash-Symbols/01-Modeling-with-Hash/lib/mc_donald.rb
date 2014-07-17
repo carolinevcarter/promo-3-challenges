@@ -1,37 +1,47 @@
+def poor_calories_counter(burger, side, beverage)
+  #TODO: return number of calories for this mcDonald order
 
-McDonalds = Hash["Cheeseburger" => 290,
+list = {
+  "Cheese Burger" => 290,
   "Big Mac" => 300,
   "Mc Bacon" => 400,
   "Royal Cheese" => 130,
   "French fries" => 130,
-  "Potatoes" =>130,
+  "Potatoes" => 130,
   "Coca" => 160,
-  "Sprite" => 170]
+  "Sprite" => 170
+}
 
-def poor_calories_counter(burger, side, beverage)
-  sum = 0
-  McDonalds.each do |x,y|
-    if x == burger || x == side || x == beverage
-      sum += y
-    end
-  return sum
-  end
+return list[burger] + list[side] + list[beverage]
+
 end
 
+poor_calories_counter("Cheese Burger", "Potatoes", "Coca")
 
 def calories_counter(*orders)
-  sum = 0
-  orders.each do |x|
-    if x == "Happy Meal"
-      sum += poor_calories_counter("Cheese Burger", "French fries", "Coca")
-    elsif x == "Best Of Big Mac"
-      sum += poor_calories_counter("Big Mac", "French fries", "Coca")
-    elsif x == "Best Of Royal Cheese"
-      sum += poor_calories_counter("Royal Cheese", "Potatoes", "Sprite")
-    else
-      sum += McDonalds[x]
-    end
-  return sum
+  #TODO: return number of calories for a less constrained order
+sum_cal = 0
+
+list = {
+  "Cheese Burger" => 290,
+  "Big Mac" => 300,
+  "Mc Bacon" => 400,
+  "Royal Cheese" => 130,
+  "French fries" => 130,
+  "Potatoes" => 130,
+  "Coca" => 160,
+  "Sprite" => 170,
+  "Happy Meal" => 580,
+  "Best Of Big Mac" => 590,
+  "Best Of Royal Cheese" => 430
+  }
+
+  orders.each do |item|
+    sum_cal += list[item]
   end
+
+  sum_cal
+
 end
 
+calories_counter("French fries", "Happy Meal", "Coca", "Sprite")
