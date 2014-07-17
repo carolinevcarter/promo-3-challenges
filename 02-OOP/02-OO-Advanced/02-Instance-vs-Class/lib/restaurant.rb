@@ -24,7 +24,7 @@ attr_reader :average_rating
   end
 
   def self.filter_by_city(restaurants, city)
-    restaurants.each do |restaurant|
+    restaurants.select do |restaurant|
       if restaurant.city == city
         true
       else
