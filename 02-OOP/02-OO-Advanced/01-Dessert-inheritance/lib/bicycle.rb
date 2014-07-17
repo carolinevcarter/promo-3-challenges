@@ -20,7 +20,6 @@ def quizz
   b = Bicycle.new
   t = Tandem.new(4)
 
-
   answers << (b.gears == 1)
   answers << (b.wheels == 2)
   answers << (b.seats == 1)
@@ -31,3 +30,5 @@ def quizz
 
   answers.inject(true) {|result, answer| result and answer}
 end
+
+
