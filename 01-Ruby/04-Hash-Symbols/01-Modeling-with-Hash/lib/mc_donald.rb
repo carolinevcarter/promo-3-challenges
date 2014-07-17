@@ -15,8 +15,9 @@ def poor_calories_counter(burger, side, beverage)
       sum += y
     end
   return sum
+  end
 end
-#TODO: return number of calories for this mcDonald order
+
 
 def calories_counter(*orders)
   sum = 0
@@ -31,4 +32,6 @@ def calories_counter(*orders)
       sum += McDonalds[x]
     end
   return sum
+  end
 end
+
