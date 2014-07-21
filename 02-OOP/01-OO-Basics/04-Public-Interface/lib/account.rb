@@ -27,6 +27,9 @@ class BankAccount
   end
 
   def withdraw(amount)
+    add_transaction(-amount)
+    " Your withdraw is: #{amount} /n Your current position is: #{@position}"
+  end
 
     #you can withdraw or deposit money
     # TODO: Call add_transaction with the right argument
@@ -36,25 +39,37 @@ class BankAccount
     #Both these methods should call the private
     #BankAccount#add_transaction method (which is also called in the BankAccount#initialize).
     #These methods should return a message like "You've just withdrawn/deposit XXX euros".
-  end
+
 
   def deposit(amount)
+    add_transaction(amount)
+    " Your deposit is: #{amount} /n Your current position is: #{@position}"
     # TODO: Call add_transaction with the right argument
     # TODO: returns a string with a message
   end
 
   def transactions_history(args = {})
+    if args[:password] == @password
+      #@transactions.map{|transaction| transaction.to_s}.join("\n")
+      @transactions.map(&:to_s).join("\n") #=> Amelioration
+    elsif args.empty?
+      'no password given'
+    else
+      'wrong password'
+    end
+
     # TODO: Check if there is a password and if so if it is correct
     # TODO: return a string displaying the transactions, BUT NOT return the transaction array !
   end
 
   def iban
-  return iban[0,4] + "*" * 14 + iban[-3..-1]
+    @iban[0..3] + "*"*(@iban.size-7) + @iban[-3..-1]
+
   end
   # TODO: Hide the middle of the IBAN like FR14**************606 and return it
 
   def to_s
-
+    "Account Owner: #{@name} /n IBAN:#{iban} /n Position: #{@position}"
     # Method used when printing account object as string (also used for string interpolation)
     # TODO: Displays the account owner, the hidden iban and the position of the account
   end
