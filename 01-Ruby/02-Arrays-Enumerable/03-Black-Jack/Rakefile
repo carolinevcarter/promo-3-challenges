@@ -1,9 +1,18 @@
-require 'rake'
-require 'rake/testtask'
+movies = ["top gun", "titanic"]
+durations = [90, 180]
 
-Rake::TestTask.new do |t|
-    t.pattern = 'spec/**/*_spec.rb'
-    t.libs.push 'spec'
-  end
 
-task :default => :test
+def title_of_movie(movies)
+  i = 0
+
+
+
+
+end
+
+
+puts movie[0]
+
+
+
+

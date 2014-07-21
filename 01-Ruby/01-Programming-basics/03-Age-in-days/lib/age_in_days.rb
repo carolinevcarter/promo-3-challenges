@@ -4,5 +4,12 @@ require 'date'
 
 
 def age_in_days(day, month, year)
-  #TODO: return the age expressed in days given the day, month, and year of birth
+	d = Date.today
+	b = Date.new(year, month, day) 
+	(d - b).to_i
+
+
 end
+
+
+ 
