@@ -1,9 +1,9 @@
 class Restaurant
 
-attr_reader :city
-attr_reader :name
-attr_reader :type_of_food
-attr_reader :average_rating
+  attr_reader :city
+  attr_reader :name
+  attr_reader :type_of_food
+  attr_reader :average_rating
 
   def initialize(city, name)
     #TODO: implement constructor with relevant instance variables
@@ -13,6 +13,8 @@ attr_reader :average_rating
     @all_ratings = []
     @average_rating = 0
   end
+
+  #TODO: implement #filter_by_city and #rate methods
 
   def rate(restaurant_rating)
     sum = 0
@@ -31,5 +33,5 @@ attr_reader :average_rating
         false
       end
     end
-   end
   end
+end

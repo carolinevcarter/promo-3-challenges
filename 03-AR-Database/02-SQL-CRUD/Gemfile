@@ -1,2 +1,15 @@
 source 'https://rubygems.org'
 gem 'sqlite3'
+
+CREATE TABLE utilisateur
+(       id INT
+        nom VARCHAR(100),
+        prenom VARCHAR (100),
+        email VARCHAR (225),
+        date_naissance DATE,
+        pays VARCHAR (255),
+        ville VARCHAR (255),
+        code_postal VARCHAR(5),
+        nombre_achat INT
+
+  )
