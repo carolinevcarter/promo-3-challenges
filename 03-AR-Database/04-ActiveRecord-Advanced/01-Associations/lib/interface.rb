@@ -13,24 +13,42 @@ def create_post(user)
   rating = ask('Rating:')
   post_params = { name: name, source_url: source_url, date: Time.now, rating: rating }
 
-  # TODO: use ActiveRecord to add a new post for the user logged in!
+  post = Post.create(post_params)
+  user.posts << post
 end
+ # TODO: use ActiveRecord to add a new post for the user logged in!
+
+
 
 def list_posts(user)
-  # TODO: use ActiveRecord to get all posts of the current user
+  p user.posts
 end
 
+# TODO: use ActiveRecord to get all posts of the current user
+
+
+
 def delete_posts(user)
+  user.posts.destroy_all
   # TODO: use ActiveRecord to delete all posts of current user
 end
+
+
 
 while true
   logged_in = false
 
   until logged_in
     puts 'Please login with your <id>'
-    # TODO: instantiate a user with his <id>
+
+    id = gets.chomp
+    user = User.find(id)
+
   end
+  # TODO: instantiate a user with his <id> ^^
+
+
+
 
   puts "Hey #{user.name}, what do you want to do today? Enter <task_id>"
   puts "1. Create a post"
