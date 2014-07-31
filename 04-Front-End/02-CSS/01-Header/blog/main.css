@@ -3,3 +3,23 @@
   width: 720px;
 	font-family: 'Open Sans', sans-serif;
 }
+
+header {
+  text-align: center;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  padding-bottom: 20px;
+}
+
+
+header ul  {
+  list-style-type: none;
+}
+
+header ul li {
+  display: inline;
+  margin: 0 20px;
+}
+
+
+
+
