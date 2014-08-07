@@ -1,0 +1,16 @@
+.racer_table{
+  margin: 200px auto 0;
+}
+
+.racer_table td {
+  background-color: blue;
+  height: 40px;
+  width: 40px;
+  border: 1px;
+  border-color: green;
+  border-style: groove;
+}
+
+.racer_table td.active {
+  background-color: blue;
+}
